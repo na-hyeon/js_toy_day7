@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;/*이미지 사이즈 조정. cover은 종횡비 유지하면서 키우기*/
+}
+html{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+}
+body{
+    background-color: blanchedalmond;
+}
+section{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 0;
+}
+.container{
+    background-color: white;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    box-shadow: 0 0 61px 7px #5E849C40;
+    border-radius: 10px;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.header h1{
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+form{
+    margin-top: 10px;
+    width: 80%;
+    max-width: 300px;
+    position: relative;
+}
+input{
+    border:none;
+    border-bottom: 2px solid gray;
+    font-size: 20px;
+    margin-bottom: 10px;
+    outline: none;
+    width: 100%;
+}
+input::placeholder{
+    opacity: 0.5;
+    color: gray;
+    font-family: 'Montserrat';
+    font-weight: 300;
+}
+form ion-icon{
+    position: absolute;
+    right: 0;
+    opacity: 0.5;
+    color: gray;
+    font-size: 20px;
+}
+.gallery{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-top: 20px;
+    grid-gap: 20px;
+}
+.item{
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: .3s ease-in box-shadow;
+}
+.item:hover{
+    box-shadow: 0px 0px 10px 3px;
+}
+.item h3{
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    background-color: rgb(89, 98, 105);
+    bottom: -70;
+    color: aliceblue;
+    transition: .5s ease-in bottom;
+    font-size: 20px;
+    font-weight: 300;
+}
+.item:hover h3{
+    bottom:0;
+}
+
+@media(min-width:900px){
+.container{
+    max-width:1160px;
+    padding: 100px;
+}
+.header{
+    flex-direction: row;
+    justify-content: space-between;
+}
+.header h1{
+    font-size: 50px;
+}
+input{
+    font-size: 24px;
+}
+form ion-icon{
+    font-size: 24px;
+}
+.gallery{
+    grid-gap: 30px;
+}
+}
